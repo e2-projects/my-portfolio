@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: linear-gradient(to left top, lightblue, purple);
+    background-image: url('assets/vecteezy_colorful-abstract-background_mw0221.jpg');
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+}
