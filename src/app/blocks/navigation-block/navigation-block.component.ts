@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-block',
   templateUrl: './navigation-block.component.html',
   styleUrls: ['./navigation-block.component.scss']
 })
-export class NavigationBlockComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    this.router.navigate(['/home']);
-  }
+export class NavigationBlockComponent {
+  
+  constructor() { }
 
 }
