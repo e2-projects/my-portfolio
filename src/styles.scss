@@ -1,9 +1,17 @@
-html {
+@import "~bootstrap/scss/bootstrap";
+
+html,
+body {
     height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: linear-gradient(to left top, lightblue, purple);
-    background-image: url('assets/vecteezy_colorful-abstract-background_mw0221.jpg');
+    background-image: url('assets/back-abstraction.png')
 }
 
 .glass {
@@ -13,4 +21,17 @@ html {
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
+}
+
+button.glass {
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: small;
+    color: gray;
+    font-weight: bold;
+}
+
+button:hover.glass, button:focus.glass {
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
 }
