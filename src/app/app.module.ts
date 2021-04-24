@@ -6,12 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main/main-page/main-page.component';
 import { NavigationBlockComponent } from './blocks/navigation-block/navigation-block.component';
+import { HomeBlockComponent } from './blocks/home-block/home-block.component';
+import { AboutBlockComponent } from './blocks/about-block/about-block.component';
+import { ExperienceBlockComponent } from './blocks/experience-block/experience-block.component';
+import { ContactsBlockComponent } from './blocks/contacts-block/contacts-block.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
-    NavigationBlockComponent
+    NavigationBlockComponent,
+    HomeBlockComponent,
+    AboutBlockComponent,
+    ExperienceBlockComponent,
+    ContactsBlockComponent
   ],
   imports: [
     BrowserModule,
