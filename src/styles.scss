@@ -27,11 +27,12 @@ button.glass {
     border-radius: 5px;
     padding: 5px 15px;
     font-size: small;
-    color: gray;
+    color: rgb(61, 61, 61);
     font-weight: bold;
 }
 
-button:hover.glass, button:focus.glass {
+button:hover.glass,
+button.glass.active-nav-link {
+    background: rgba(255, 255, 255, 0.8);
     color: black;
-    background: rgba(255, 255, 255, 0.7);
 }

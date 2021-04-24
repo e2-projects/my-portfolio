@@ -10,6 +10,8 @@ import { HomeBlockComponent } from './blocks/home-block/home-block.component';
 import { AboutBlockComponent } from './blocks/about-block/about-block.component';
 import { ExperienceBlockComponent } from './blocks/experience-block/experience-block.component';
 import { ContactsBlockComponent } from './blocks/contacts-block/contacts-block.component';
+import { SocialLinksBarComponent } from './blocks/navigation-block/components/social-links-bar/social-links-bar.component';
+import { NavigationButtonsComponent } from './blocks/navigation-block/components/navigation-buttons/navigation-buttons.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ContactsBlockComponent } from './blocks/contacts-block/contacts-block.c
     HomeBlockComponent,
     AboutBlockComponent,
     ExperienceBlockComponent,
-    ContactsBlockComponent
+    ContactsBlockComponent,
+    SocialLinksBarComponent,
+    NavigationButtonsComponent
   ],
   imports: [
     BrowserModule,
