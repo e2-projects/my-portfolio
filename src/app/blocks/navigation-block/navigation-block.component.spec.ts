@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
+import { NavigationButtonsComponent } from './components/navigation-buttons/navigation-buttons.component';
+import { SocialLinksBarComponent } from './components/social-links-bar/social-links-bar.component';
 import { NavigationBlockComponent } from './navigation-block.component';
 
 describe('NavigationBlockComponent', () => {
@@ -8,7 +10,14 @@ describe('NavigationBlockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavigationBlockComponent ]
+      declarations: [
+        NavigationButtonsComponent,
+        SocialLinksBarComponent,
+        NavigationBlockComponent,
+      ],
+      imports: [
+        RouterTestingModule,
+      ]
     })
     .compileComponents();
   });
