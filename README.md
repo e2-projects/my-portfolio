@@ -1,4 +1,6 @@
-# MyPortfolio
+[![Build](https://github.com/e2-projects/my-portfolio/actions/workflows/build.yml/badge.svg)](https://github.com/e2-projects/my-portfolio/actions/workflows/build.yml)
+
+# E. Jusius Portfolio
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
