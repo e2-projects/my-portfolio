@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MOCKED_SOCIAL_DATA, SocialData } from '../../models/social-data.interface';
+import { MOCKED_SOCIAL_DATA, SocialData } from '../../models/social.data';
 
 @Component({
   selector: 'app-social-links-bar',
@@ -13,22 +13,6 @@ export class SocialLinksBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  openLinkedin(): void {
-    window.open(this.socialData.linkedinUrl, '_blank');
-  }
-
-  openFacebook(): void {
-    window.open(this.socialData.facebookUrl, '_blank');
-  }
-
-  openInstagram(): void {
-    window.open(this.socialData.instagramUrl, '_blank');
-  }
-
-  openGithub(): void {
-    window.open(this.socialData.githubUrl, '_blank');
   }
 
 }
