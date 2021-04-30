@@ -1,14 +1,22 @@
 <div class="d-inline-flex align-items-center justify-content-center w-100">
-    <div class="icon-wrapper glass p-2 pb-1" (click)="openLinkedin()">
-        <i class="fab fa-linkedin fa-2x"></i>
-    </div>
-    <div class="icon-wrapper glass p-2 pb-1" (click)="openFacebook()">
-        <i class="fab fa-facebook-square fa-2x"></i>
-    </div>
-    <div class="icon-wrapper glass p-2 pb-1" (click)="openInstagram()">
-        <i class="fab fa-instagram-square fa-2x"></i>
-    </div>
-    <div class="icon-wrapper glass p-2 pb-1" (click)="openGithub()">
-        <i class="fab fa-github-square fa-2x"></i>
-    </div>
+    <a [href]="socialData?.linkedinUrl" target="_blank">
+        <div class="icon-wrapper glass p-2 pb-1">
+            <i class="fab fa-linkedin fa-2x"></i>
+        </div>
+    </a>
+    <a [href]="socialData?.facebookUrl" target="_blank">
+        <div class="icon-wrapper glass p-2 pb-1">
+            <i class="fab fa-facebook-square fa-2x"></i>
+        </div>
+    </a>
+    <a [href]="socialData?.instagramUrl" target="_blank">
+        <div class="icon-wrapper glass p-2 pb-1">
+            <i class="fab fa-instagram-square fa-2x"></i>
+        </div>
+    </a>
+    <a [href]="socialData?.githubUrl" target="_blank">
+        <div class="icon-wrapper glass p-2 pb-1">
+            <i class="fab fa-github-square fa-2x"></i>
+        </div>
+    </a>
 </div>

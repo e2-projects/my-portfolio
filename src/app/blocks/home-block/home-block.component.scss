@@ -1,1 +1,23 @@
+.text-block {
+    margin: 6rem 3rem 5rem 3rem;
+}
 
+.title-line {
+    color: rgb(99, 99, 99);
+    font-size: xx-large;
+}
+
+.text-paragraph {
+    font-size: large;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(99, 99, 99);
+}
+
+a:hover {
+    text-decoration: underline;
+}
