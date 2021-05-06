@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { WorkplaceCollapsibleComponent } from './components/workplace-collapsible/workplace-collapsible.component';
 import { ExperienceBlockComponent } from './experience-block.component';
 
 describe('ExperienceBlockComponent', () => {
@@ -8,7 +8,10 @@ describe('ExperienceBlockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExperienceBlockComponent ]
+      declarations: [
+        ExperienceBlockComponent,
+        WorkplaceCollapsibleComponent
+      ]
     })
     .compileComponents();
   });
