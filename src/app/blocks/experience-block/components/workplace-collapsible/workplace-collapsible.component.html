@@ -1,0 +1,6 @@
+<div class="glass mb-3">
+    <div class="collapsible w-100"
+        (click)="toggle()"
+        [ngClass]="visible ? 'glass' : ''">{{data.companyName}}</div>
+    <app-workplace-collapsible-content *ngIf="visible" [data]="data"></app-workplace-collapsible-content>
+</div>

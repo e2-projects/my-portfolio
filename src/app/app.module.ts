@@ -12,6 +12,8 @@ import { ExperienceBlockComponent } from './blocks/experience-block/experience-b
 import { ContactsBlockComponent } from './blocks/contacts-block/contacts-block.component';
 import { SocialLinksBarComponent } from './blocks/navigation-block/components/social-links-bar/social-links-bar.component';
 import { NavigationButtonsComponent } from './blocks/navigation-block/components/navigation-buttons/navigation-buttons.component';
+import { WorkplaceCollapsibleComponent } from './blocks/experience-block/components/workplace-collapsible/workplace-collapsible.component';
+import { WorkplaceCollapsibleContentComponent } from './blocks/experience-block/components/workplace-collapsible-content/workplace-collapsible-content.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavigationButtonsComponent } from './blocks/navigation-block/components
     ExperienceBlockComponent,
     ContactsBlockComponent,
     SocialLinksBarComponent,
-    NavigationButtonsComponent
+    NavigationButtonsComponent,
+    WorkplaceCollapsibleComponent,
+    WorkplaceCollapsibleContentComponent
   ],
   imports: [
     BrowserModule,
