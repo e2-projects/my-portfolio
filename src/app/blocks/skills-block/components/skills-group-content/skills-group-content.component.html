@@ -1,0 +1,16 @@
+<div class="skills-group-content">
+    <div class="skills-container b">
+        <ul>
+            <li *ngFor="let skill of skills">
+                <div class="item-row">
+                    <div>{{skill.name}}</div>
+                    <div class="rate-container">
+                        <div class="skill-rate-container">
+                            <div class="skill-rate-bar" [ngClass]=""></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

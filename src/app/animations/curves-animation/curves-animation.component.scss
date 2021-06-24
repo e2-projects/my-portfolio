@@ -1,0 +1,49 @@
+.curveWrap {
+  opacity: 1;
+  width: 150vw;
+  height: 120vh;
+  position: absolute;
+  transform: translateX(-30vw) rotate(-15deg);
+  will-change: transform;
+
+  .curve {
+    stroke-linecap: round;
+    stroke-opacity: 0;
+
+    path {
+      transform-origin: center;
+    }
+
+    @for $i from 1 through 4 {
+      
+      $randomNumber: random((40) + 10);
+
+      & path:nth-child(#{$i}) {
+        stroke-width: $randomNumber;
+
+        animation: curve 35s linear $i * 1.6s infinite;
+      }
+
+      $colors: 
+        goldenrod, 
+        cornflowerBlue, 
+        GreenYellow, 
+        lightblue, 
+        darkgreen,
+        olive;
+
+      @for $i from 1 through length($colors) {
+        & path:nth-child(#{length($colors)}n + #{$i}) {
+          stroke: nth($colors, $i);
+        }
+      }
+    }
+  }
+
+  @keyframes curve {
+    50% {
+      transform: rotateX(360deg) scaley(1) skewY(8deg);
+      stroke-opacity: 1;
+    }
+  }
+}
