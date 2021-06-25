@@ -9,7 +9,7 @@ export interface SkillGroup {
 
 export interface Skill {
     name: string;
-    yearsOfExperience: string;
+    experience: string;
 }
 
 export const MOCKED_SKILLS_DATA: SkillsData = {
@@ -17,46 +17,46 @@ export const MOCKED_SKILLS_DATA: SkillsData = {
         {
             name: 'Programming language',
             skills: [
-                { name: 'Java', yearsOfExperience: '5' },
-                { name: 'JavaScript', yearsOfExperience: '3' },
-                { name: 'TypeScript', yearsOfExperience: '3' },
-                { name: 'Groovy', yearsOfExperience: '2' },
-                { name: 'Kotlin', yearsOfExperience: '0.5' },
-                { name: 'PHP', yearsOfExperience: '0.5' }
+                { name: 'Java', experience: '6' },
+                { name: 'JavaScript', experience: '4' },
+                { name: 'TypeScript', experience: '5' },
+                { name: 'Groovy', experience: '4' },
+                { name: 'Kotlin', experience: '2' },
+                { name: 'PHP', experience: '1' }
             ]
         },
         {
             name: 'Database',
             skills: [
-                { name: 'Oracle', yearsOfExperience: '3' },
-                { name: 'PostgreSQL', yearsOfExperience: '2' },
-                { name: 'MySQL', yearsOfExperience: '1' },
-                { name: 'MongoDB', yearsOfExperience: '0.5' }
+                { name: 'Oracle', experience: '5' },
+                { name: 'PostgreSQL', experience: '4' },
+                { name: 'MySQL', experience: '2' },
+                { name: 'MongoDB', experience: '2' }
             ]
         },
         {
             name: 'Frameworks',
             skills: [
-                { name: 'Spring Boot', yearsOfExperience: '4' },
-                { name: 'RESTful', yearsOfExperience: '4' },
-                { name: 'Angular', yearsOfExperience: '3' },
-                { name: 'AngularJS', yearsOfExperience: '1' },
-                { name: 'Dojo', yearsOfExperience: '0.5' },
-                { name: 'Liquibase', yearsOfExperience: '2' },
-                { name: 'FlyWay', yearsOfExperience: '2' },
-                { name: 'Hibernate', yearsOfExperience: '4' },
-                { name: 'Swagger', yearsOfExperience: '4' },
-                { name: 'JavaFX', yearsOfExperience: '1' }
+                { name: 'Spring Boot', experience: '5' },
+                { name: 'RESTful', experience: '5' },
+                { name: 'Angular', experience: '5' },
+                { name: 'AngularJS', experience: '2' },
+                { name: 'Dojo', experience: '1' },
+                { name: 'Liquibase', experience: '4' },
+                { name: 'FlyWay', experience: '3' },
+                { name: 'Hibernate', experience: '4' },
+                { name: 'Swagger', experience: '4' },
+                { name: 'JavaFX', experience: '1' }
             ]
         },
         {
             name: 'Other',
             skills: [
-                { name: 'GitHub', yearsOfExperience: '5' },
-                { name: 'Jira', yearsOfExperience: '3' },
-                { name: 'Jenkins', yearsOfExperience: '2.5' },
-                { name: 'Openshift', yearsOfExperience: '2.5' },
-                { name: 'Bitbucket', yearsOfExperience: '1' }
+                { name: 'GitHub', experience: '5' },
+                { name: 'Jira', experience: '4' },
+                { name: 'Jenkins', experience: '3' },
+                { name: 'Openshift', experience: '3' },
+                { name: 'Bitbucket', experience: '1' }
             ]
         }
     ]

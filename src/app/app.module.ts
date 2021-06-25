@@ -19,6 +19,7 @@ import { SkillsGroupComponent } from './blocks/skills-block/components/skills-gr
 import { SkillsGroupContentComponent } from './blocks/skills-block/components/skills-group-content/skills-group-content.component';
 import { SkillRateComponent } from './blocks/skills-block/components/skill-rate/skill-rate.component';
 import { CurvesAnimationComponent } from './animations/curves-animation/curves-animation.component';
+import { ProgressAnimationComponent } from './animations/progress-animation/progress-animation.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CurvesAnimationComponent } from './animations/curves-animation/curves-a
     SkillsGroupComponent,
     SkillsGroupContentComponent,
     SkillRateComponent,
-    CurvesAnimationComponent
+    CurvesAnimationComponent,
+    ProgressAnimationComponent
   ],
   imports: [
     BrowserModule,
