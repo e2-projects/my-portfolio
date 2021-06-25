@@ -14,6 +14,12 @@ import { SocialLinksBarComponent } from './blocks/navigation-block/components/so
 import { NavigationButtonsComponent } from './blocks/navigation-block/components/navigation-buttons/navigation-buttons.component';
 import { WorkplaceCollapsibleComponent } from './blocks/experience-block/components/workplace-collapsible/workplace-collapsible.component';
 import { WorkplaceCollapsibleContentComponent } from './blocks/experience-block/components/workplace-collapsible-content/workplace-collapsible-content.component';
+import { SkillsBlockComponent } from './blocks/skills-block/skills-block.component';
+import { SkillsGroupComponent } from './blocks/skills-block/components/skills-group/skills-group.component';
+import { SkillsGroupContentComponent } from './blocks/skills-block/components/skills-group-content/skills-group-content.component';
+import { SkillRateComponent } from './blocks/skills-block/components/skill-rate/skill-rate.component';
+import { CurvesAnimationComponent } from './animations/curves-animation/curves-animation.component';
+import { ProgressAnimationComponent } from './animations/progress-animation/progress-animation.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,13 @@ import { WorkplaceCollapsibleContentComponent } from './blocks/experience-block/
     SocialLinksBarComponent,
     NavigationButtonsComponent,
     WorkplaceCollapsibleComponent,
-    WorkplaceCollapsibleContentComponent
+    WorkplaceCollapsibleContentComponent,
+    SkillsBlockComponent,
+    SkillsGroupComponent,
+    SkillsGroupContentComponent,
+    SkillRateComponent,
+    CurvesAnimationComponent,
+    ProgressAnimationComponent
   ],
   imports: [
     BrowserModule,

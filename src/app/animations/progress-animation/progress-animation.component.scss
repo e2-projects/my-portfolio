@@ -1,0 +1,97 @@
+#progress-bar-container {
+	width: 100%;
+	height: .7rem;
+	transform: translateY(-50%);
+	border-radius: 35px;
+	overflow: hidden;
+}
+
+.progress-bar-child {
+	width: 100%;
+	height: 100%;
+}
+
+.progress {
+	color: white;
+	text-align: center;
+	line-height: 75px;
+	font-size: 35px;
+	font-family: "Segoe UI";
+	animation-direction: reverse;
+	background: #e5405e;
+	background: linear-gradient(to right, #e5405e 0%, #ffdb3a 45%, #3fffa2 100%);
+}
+
+.shrinker {
+	background-color: gray;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 95%;
+}
+
+@for $i from 1 to 7 {
+    $animationName: timelapse#{$i};
+    .timelapse-#{$i} {
+        animation-name: $animationName;
+        animation-fill-mode: forwards;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(.86, .05, .4, .96);
+    }
+}
+
+@keyframes timelapse6 {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 0%;
+	}
+}
+
+@keyframes timelapse5 {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 10%;
+	}
+}
+
+@keyframes timelapse4 {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 25%;
+    }
+}
+
+@keyframes timelapse3 {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes timelapse2 {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 75%;
+	}
+}
+
+@keyframes timelapse1 {
+	0% {
+		width: 100%;
+	}
+	100% {
+		width: 90%;
+	}
+}
+
+
