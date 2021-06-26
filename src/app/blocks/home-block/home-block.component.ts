@@ -4,7 +4,12 @@ import { HomePageData, MOCKED_HOME_PAGE_DATA } from './models/home-page.data';
 @Component({
   selector: 'app-home-block',
   templateUrl: './home-block.component.html',
-  styleUrls: ['./home-block.component.scss'],
+  styleUrls: [
+    './home-block.component.scss',
+    './../../animations/text-animation/home-page-title.animation.scss',
+    './../../animations/text-animation/home-page-info.animation.scss',
+    './../../animations/text-animation/home-page-description.animation.scss'
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeBlockComponent implements OnInit {
