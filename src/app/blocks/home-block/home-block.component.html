@@ -1,7 +1,25 @@
 <div class="w-100">
     <div class="text-block">
-        <div class="title-line">Hello. I'm <b>{{data?.personName}}</b></div>
-        <div class="text-paragraph">I'm a software developer living in {{data?.city}}, {{data?.country}}. Currently I'm working in <a [href]="data?.companyLink" target="_blank">{{data?.companyName}}</a>.</div>
-        <div class="text-paragraph">{{data?.description}}</div>
+        <div class="title-line">
+            <span *ngFor="let c of titleChars; let i = index">
+                <span [ngClass]="c ? 'name-char-'+i : ''">{{c}}</span>
+            </span>
+            <span id="name"><b>{{data?.personName}}</b></span>
+        </div>
+        
+        <div class="text-paragraph">
+            <span *ngFor="let c of infoChars; let i = index">
+                <span [ngClass]="c ? 'info-char-'+i : ''">{{c}}</span>
+            </span>
+            <span id="company">
+                <a [href]="data?.companyLink" target="_blank">{{data?.companyName}}</a>.
+            </span>
+        </div>
+
+        <div class="text-paragraph">
+            <span *ngFor="let c of descriptionChars; let i = index">
+                <span [ngClass]="c ? 'description-char-'+i : ''">{{c}}</span>
+            </span>
+        </div>
     </div>
 </div>
