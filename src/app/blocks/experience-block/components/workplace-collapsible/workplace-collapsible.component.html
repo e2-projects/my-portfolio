@@ -1,4 +1,4 @@
-<div class="glass mb-3">
+<div [@fade]="{value:'',params:{animationDelay:animationDelay}}" class="glass mb-3">
     <div class="collapsible w-100"
         (click)="toggle()"
         [ngClass]="visible ? 'glass' : ''">{{data.companyName}}</div>
