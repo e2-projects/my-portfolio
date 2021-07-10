@@ -5,11 +5,11 @@ body {
     height: 100%;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    overflow: hidden;
 }
 
 body {
     height: 100%;
-    // background-image: url('assets/Circuit_init4.png');
     background-size: cover;
     background-repeat: no-repeat;
     overflow-y: hidden;
@@ -40,7 +40,7 @@ button.glass.active-nav-link {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 10px;
 }
   
 /* Track */
@@ -51,13 +51,23 @@ button.glass.active-nav-link {
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.8);
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /** DEV purpose */

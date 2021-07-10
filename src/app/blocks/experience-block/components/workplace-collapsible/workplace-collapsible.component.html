@@ -1,6 +1,9 @@
-<div class="glass mb-3">
-    <div class="collapsible w-100"
-        (click)="toggle()"
-        [ngClass]="visible ? 'glass' : ''">{{data.companyName}}</div>
+<div [@fade]="{value:'',params:{animationDelay:animationDelay}}" class="glass mb-3">
+    <div class="collapsible w-100 unselectable"
+        (click)="toggle()">
+        <span *ngIf="visible"><i class="fas fa-angle-up"></i></span>
+        <span *ngIf="!visible"><i class="fas fa-angle-down"></i></span>
+        &nbsp;{{data.companyName}}
+    </div>
     <app-workplace-collapsible-content *ngIf="visible" [data]="data"></app-workplace-collapsible-content>
 </div>
