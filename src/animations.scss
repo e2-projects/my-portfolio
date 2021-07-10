@@ -1,0 +1,42 @@
+/* BOUNCE IN */
+.bounce-in {
+    opacity: 0;
+    animation-name: bounceIn;
+    animation-duration: 450ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translate3d(0, 0, 0);
+    }
+}
+
+/* ZOOM ON HOVER */
+.zoom-on-hover {
+    transition: transform .2s;
+}
+
+.zoom-on-hover:hover {
+    transform: scale(1.05);
+}
+
+@for $i from 1 to 5 {
+    .zoom-on-hover-#{$i}:hover {
+        transform: scale(#{$i/10+1});
+    }
+}

@@ -22,20 +22,20 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
   contactsButton: ElementRef;
 
   private HIGHLIGHT_CLASS = 'active-nav-link';
-  private path = '';
 
   constructor(private router: Router,
               private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.path = this.router.routerState.snapshot.url;
-    console.log(this.path);
-    this.router.navigate([`${this.path}`]);
+    const path = this.router.routerState.snapshot.url;
+    console.log(path);
+    this.router.navigate([`${path}`]);
   }
 
   ngAfterViewChecked(): void {
     let button: ElementRef;
-    switch (this.path) {
+    const path = this.router.routerState.snapshot.url;
+    switch (path) {
       case '/about': button = this.aboutButton; break;
       case '/skills': button = this.skillsButton; break;
       case '/experience': button = this.experienceButton; break;
@@ -71,16 +71,17 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
   }
 
   private highlightButton(button: ElementRef): void {
+    console.log(button.nativeElement);
     this.resetAllButtons();
     this.renderer.addClass(button.nativeElement, this.HIGHLIGHT_CLASS);
   }
 
   private resetAllButtons(): void {
-      this.renderer.removeClass(this.homeButton.nativeElement, this.HIGHLIGHT_CLASS);
-      this.renderer.removeClass(this.aboutButton.nativeElement, this.HIGHLIGHT_CLASS);
-      this.renderer.removeClass(this.skillsButton.nativeElement, this.HIGHLIGHT_CLASS);
-      this.renderer.removeClass(this.experienceButton.nativeElement, this.HIGHLIGHT_CLASS);
-      this.renderer.removeClass(this.contactsButton.nativeElement, this.HIGHLIGHT_CLASS);
+    this.renderer.removeClass(this.homeButton.nativeElement, this.HIGHLIGHT_CLASS);
+    this.renderer.removeClass(this.aboutButton.nativeElement, this.HIGHLIGHT_CLASS);
+    this.renderer.removeClass(this.skillsButton.nativeElement, this.HIGHLIGHT_CLASS);
+    this.renderer.removeClass(this.experienceButton.nativeElement, this.HIGHLIGHT_CLASS);
+    this.renderer.removeClass(this.contactsButton.nativeElement, this.HIGHLIGHT_CLASS);
   }
 
 }
