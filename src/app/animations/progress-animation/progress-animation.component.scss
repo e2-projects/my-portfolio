@@ -18,17 +18,18 @@
 	font-size: 35px;
 	font-family: "Segoe UI";
 	animation-direction: reverse;
-	background: #e5405e;
+	/*background: #e5405e;
 	background: linear-gradient(
 		to right, 
 		#e5405e 0%, 
 		#ffdb3a 45%, 
 		#3fffa2 100%
-	);
+	);*/
+	background: cornflowerBlue;
 }
 
 .shrinker {
-	background-color: gray;
+	background-color: lightgray;
 	position: absolute;
 	top: 0;
 	right: 0;
