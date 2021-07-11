@@ -71,6 +71,11 @@ button.glass.active-nav-link {
     user-select: none;
 }
 
+::placeholder {
+    color: gray;
+    opacity: .7;
+}
+
 /** DEV purpose */
 .b {
     border: 1px solid chartreuse;
