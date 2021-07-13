@@ -21,6 +21,7 @@ import { SkillRateComponent } from './blocks/skills-block/components/skill-rate/
 import { CurvesAnimationComponent } from './animations/curves-animation/curves-animation.component';
 import { ProgressAnimationComponent } from './animations/progress-animation/progress-animation.component';
 import { ContactFormComponent } from './blocks/contacts-block/components/contact-form/contact-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,8 @@ import { ContactFormComponent } from './blocks/contacts-block/components/contact
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],

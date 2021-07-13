@@ -5,6 +5,7 @@ $neu-lightblue-color: #61677C;
 $neu-shadow: #d3d3dd;
 // $neu-white: #e6e6e9;
 $neu-white: #efeff8;
+$neu-primary: #007bff;
 
 .form-container {
     width: 70%;
@@ -61,9 +62,14 @@ button.neu {
 }
 
 button.neu.primary {
+    color: $neu-primary;
     text-shadow: none;
+    min-width: 5rem;
+    padding: .5rem;
+    font-size: .8rem;
     &:disabled {
         color: dimgray;
+        cursor:auto;
     }
 }
 
@@ -90,6 +96,12 @@ textarea.neu {
     }
 
     &.neu-error {
-        border: 2px solid rgb(179, 0, 0);
+        -webkit-box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
+        -moz-box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
+        box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
     }
+}
+
+textarea {
+    resize: none;
 }
