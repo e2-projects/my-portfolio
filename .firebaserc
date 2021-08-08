@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ej-my-portfolio": {
+      "hosting": {
+        "my-portfolio": [
+          "ej-my-portfolio"
+        ]
+      }
+    }
+  }
+}
