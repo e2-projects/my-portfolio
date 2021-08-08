@@ -28,7 +28,6 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     const path = this.router.routerState.snapshot.url;
-    console.log(path);
     this.router.navigate([`${path}`]);
   }
 
@@ -71,7 +70,6 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
   }
 
   private highlightButton(button: ElementRef): void {
-    console.log(button.nativeElement);
     this.resetAllButtons();
     this.renderer.addClass(button.nativeElement, this.HIGHLIGHT_CLASS);
   }

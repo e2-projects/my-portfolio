@@ -5,11 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contacts-block.component.html',
   styleUrls: ['./contacts-block.component.scss']
 })
-export class ContactsBlockComponent implements OnInit {
+export class ContactsBlockComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
