@@ -6,6 +6,7 @@ $neu-shadow: #d3d3dd;
 // $neu-white: #e6e6e9;
 $neu-white: #efeff8;
 $neu-primary: #007bff;
+$neu-error: rgb(236, 0, 0);
 
 .form-container {
     width: 70%;
@@ -56,7 +57,7 @@ button.neu {
     }
 
     &:disabled {
-        color: dimgray;
+        color: grey;
         box-shadow: none;
     }
 }
@@ -68,8 +69,8 @@ button.neu.primary {
     padding: .5rem;
     font-size: .8rem;
     &:disabled {
-        color: dimgray;
-        cursor:auto;
+        color: grey;
+        cursor: auto;
     }
 }
 
@@ -96,9 +97,9 @@ textarea.neu {
     }
 
     &.neu-error {
-        -webkit-box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
-        -moz-box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
-        box-shadow:inset 0px 0px 0px 1px rgb(236, 0, 0);
+        -webkit-box-shadow:inset 0px 0px 0px 1px $neu-error;
+        -moz-box-shadow:inset 0px 0px 0px 1px $neu-error;
+        box-shadow:inset 0px 0px 0px 1px $neu-error;
     }
 }
 
