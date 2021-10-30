@@ -1,32 +1,39 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { HomePageData, MOCKED_HOME_PAGE_DATA } from './models/home-page.data';
+import { Observable } from 'rxjs';
+import { Collection } from 'src/app/constants/collections';
+import { Company } from 'src/app/models/data/company.model';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { HomePageData } from './models/home-page.data';
 
 @Component({
   selector: 'app-home-block',
   templateUrl: './home-block.component.html',
-  styleUrls: [
-    './home-block.component.scss',
-    './../../animations/text-animation/home-page-title.animation.scss',
-    './../../animations/text-animation/home-page-info.animation.scss',
-    './../../animations/text-animation/home-page-description.animation.scss'
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./home-block.component.scss']
 })
 export class HomeBlockComponent implements OnInit {
 
-  data: HomePageData;
+  title: string;
+  name: string;
+  info: string;
+  company: Company;
+  description: string;
+  loading = true;
 
-  titleChars: string[];
-  infoChars: string[];
-  descriptionChars: string[];
-
-  constructor() { }
+  constructor(private firestore: FirestoreService) { }
 
   ngOnInit(): void {
-    this.data = MOCKED_HOME_PAGE_DATA;
-    this.titleChars = `Hello. I'm `.split('');
-    this.infoChars = `I'm a software developer living in ${this.data?.city}, ${this.data?.country}. Currently I'm working in `.split('')
-    this.descriptionChars = this.data?.description.split('');
+    this.firestore.getCollectionItem<HomePageData>(Collection.HOME_TAB_DATA)
+                  .subscribe(data => this.setupData(data));
+  }
+
+  private setupData(data: HomePageData): void {
+    console.log(data);
+    this.title = `Hello. I'm `;
+    this.name = data.fullName;
+    this.info = `I'm a ${data.position.toLowerCase()} living in ${data.address}. Currently I'm working in `;
+    this.company = data.company;
+    this.description = data.description;
+    this.loading = false;
   }
 
 }

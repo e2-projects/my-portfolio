@@ -13,8 +13,13 @@ import { ExperienceBlockComponent } from './experience-block/experience-block.co
 import { ContactFormComponent } from './contacts-block/components/contact-form/contact-form.component';
 import { ContactsBlockComponent } from './contacts-block/contacts-block.component';
 import { AboutBlockComponent } from './about-block/about-block.component';
-
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from '../app-routing.module';
+import { CurvesAnimationComponent } from '../animations/curves-animation/curves-animation.component';
+import { NavigationBlockComponent } from './navigation-block/navigation-block.component';
+import { ProgressAnimationComponent } from '../animations/progress-animation/progress-animation.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +29,42 @@ import { AboutBlockComponent } from './about-block/about-block.component';
     SkillsBlockComponent,
     NavigationButtonsComponent,
     SocialLinksBarComponent,
-    NavigationButtonsComponent,
     HomeBlockComponent,
     WorkplaceCollapsibleComponent,
     WorkplaceCollapsibleContentComponent,
     ExperienceBlockComponent,
     ContactFormComponent,
     ContactsBlockComponent,
-    AboutBlockComponent
+    AboutBlockComponent,
+    CurvesAnimationComponent,
+    NavigationBlockComponent,
+    ProgressAnimationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  exports: [
+    SkillsGroupComponent,
+    SkillsGroupContentComponent,
+    SkillRateComponent,
+    SkillsBlockComponent,
+    NavigationButtonsComponent,
+    SocialLinksBarComponent,
+    HomeBlockComponent,
+    WorkplaceCollapsibleComponent,
+    WorkplaceCollapsibleContentComponent,
+    ExperienceBlockComponent,
+    ContactFormComponent,
+    ContactsBlockComponent,
+    AboutBlockComponent,
+    CurvesAnimationComponent,
+    NavigationBlockComponent,
+    ProgressAnimationComponent
   ]
 })
 export class AppTabsModule { }

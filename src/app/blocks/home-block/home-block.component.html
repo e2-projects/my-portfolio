@@ -1,25 +1,28 @@
 <div class="w-100">
     <div class="text-block">
-        <div class="title-line">
-            <span *ngFor="let c of titleChars; let i = index">
-                <span [ngClass]="c ? 'name-char-'+i : ''">{{c}}</span>
-            </span>
-            <span id="name"><b>{{data?.personName}}</b></span>
+        <div *ngIf="loading" class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        
-        <div class="text-paragraph">
-            <span *ngFor="let c of infoChars; let i = index">
-                <span [ngClass]="c ? 'info-char-'+i : ''">{{c}}</span>
-            </span>
-            <span id="company">
-                <a [href]="data?.companyLink" target="_blank">{{data?.companyName}}</a>.
-            </span>
+        <div *ngIf="loading" class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-
-        <div class="text-paragraph">
-            <span *ngFor="let c of descriptionChars; let i = index">
-                <span [ngClass]="c ? 'description-char-'+i : ''">{{c}}</span>
-            </span>
+        <div *ngIf="loading" class="spinner-grow" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div *ngIf="!loading">
+            <div class="title-line">
+                <span>{{title}}</span><span id="name"><b>{{name}}</b></span>
+            </div>
+            <br>
+            <div class="text-paragraph">
+                <span>{{info}}</span>
+                <span id="company">
+                    <a [href]="company?.url" target="_blank">{{company?.name}}</a>.
+                </span>
+            </div>
+            <div class="text-paragraph">
+                <span>{{description}}</span>
+            </div>
         </div>
     </div>
 </div>
