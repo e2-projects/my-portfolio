@@ -1,14 +1,25 @@
 <div class="glass h-100 profile-container">
     <div class="glass top-container text-center">
-        <div class="image-container glass rounded-circle mb-3"><i class="fas fa-user m-auto fa-3x"></i></div>
-        <h6>Edvardas Jusius</h6>
-        <div class="info-text">Solution Developer<p>
+        <div class="image-container glass rounded-circle mb-3">
+            <i class="fas fa-user m-auto fa-3x"></i>
         </div>
+        
+        <span *ngIf="loading">
+            <div class="loader name-loader skeleton-loader skeleton-loader-fill-sm"></div>
+            <div class="loader skeleton-loader skeleton-loader-fill-sm"></div>
+        </span>
+
+        <span *ngIf="!loading">
+            <h6>{{profile?.name}}&nbsp;{{profile?.surname}}</h6>
+            <div class="info-text">{{profile?.position}}</div>
+        </span>
     </div>
+
     <div>
         <app-navigation-buttons></app-navigation-buttons>
     </div>
+    
     <div class="w-100 social-links-wrapper">
-        <app-social-links-bar></app-social-links-bar>
+        <app-social-links-bar [data]="(socialLinks$ | async)"></app-social-links-bar>
     </div>
 </div>

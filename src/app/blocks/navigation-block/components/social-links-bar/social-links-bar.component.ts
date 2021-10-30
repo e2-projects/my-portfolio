@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { MOCKED_SOCIAL_DATA, SocialData } from '../../models/social.data';
+import { Component, Input } from '@angular/core';
+import { SocialLinks } from 'src/app/models/data/social-links.model';
 
 @Component({
   selector: 'app-social-links-bar',
   templateUrl: './social-links-bar.component.html',
   styleUrls: ['./social-links-bar.component.scss']
 })
-export class SocialLinksBarComponent implements OnInit {
+export class SocialLinksBarComponent {
 
-  socialData: SocialData = MOCKED_SOCIAL_DATA;
+  @Input() data: SocialLinks;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

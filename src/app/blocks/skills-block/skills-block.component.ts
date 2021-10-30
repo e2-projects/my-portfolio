@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MOCKED_SKILLS_DATA, SkillGroup, SkillsData } from './models/skills.data';
+import { Collection } from 'src/app/constants/collections';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { SkillGroup } from './models/skills.data';
 
 @Component({
   selector: 'app-skills-block',
@@ -10,11 +12,13 @@ export class SkillsBlockComponent implements OnInit {
 
   skills: SkillGroup[];
 
-  constructor() { }
+  constructor(private firestore: FirestoreService) { }
 
   ngOnInit(): void {
-    this.skills = MOCKED_SKILLS_DATA.skillGroups;
-    console.log(this.skills);
+    this.firestore.getCollectionItems<SkillGroup>(Collection.SKILLS_TAB_DATA)
+                  .subscribe((groups: SkillGroup[]) => {
+                    this.skills = groups.sort((a, b) => a.position < b.position ? -1 : 1);
+                  });
   }
 
 }
