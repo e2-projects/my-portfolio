@@ -1,19 +1,12 @@
-import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+import { FadeInAnimation } from 'src/app/animations/custom-animations';
 import { WorkExperience } from '../../models/work-experience.data';
 
 @Component({
   selector: 'app-workplace-collapsible',
   templateUrl: './workplace-collapsible.component.html',
   styleUrls: ['./workplace-collapsible.component.scss'],
-  animations: [
-    trigger('fade', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('300ms {{animationDelay}}ms', style({ opacity: 1 })),
-      ], { params: { animationDelay: 0 } })
-    ])
-  ]
+  animations: [FadeInAnimation]
 })
 export class WorkplaceCollapsibleComponent implements OnInit {
 
