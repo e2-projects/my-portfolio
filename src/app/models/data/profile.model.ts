@@ -1,4 +1,4 @@
-import { DataObject } from "./data-object";
+import { DataObject } from './data-object';
 
 export interface Profile extends DataObject {
     name: string;

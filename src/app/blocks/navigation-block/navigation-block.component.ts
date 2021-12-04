@@ -17,7 +17,7 @@ export class NavigationBlockComponent extends Unsubscribable() implements OnInit
   profile: Profile;
   socialLinks$: Observable<SocialLinks>;
   loading = true;
-  
+
   constructor(private firestore: FirestoreService) {
     super();
   }
@@ -25,7 +25,7 @@ export class NavigationBlockComponent extends Unsubscribable() implements OnInit
   ngOnInit(): void {
     this.firestore.getCollectionItem<Profile>(Collection.PROFILE)
                   .pipe(takeUntil(this.unsubscribe))
-                  .subscribe(profile => { 
+                  .subscribe(profile => {
       this.profile = profile;
       this.loading = false;
     });

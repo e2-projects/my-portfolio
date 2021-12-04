@@ -1,1 +1,1 @@
-export interface DataObject {}
+export interface DataObject { object?: any; }

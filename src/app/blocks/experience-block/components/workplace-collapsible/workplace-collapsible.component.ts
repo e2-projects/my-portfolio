@@ -12,7 +12,7 @@ export class WorkplaceCollapsibleComponent implements OnInit {
 
   visible: boolean;
   @Input() data: WorkExperience;
-  @Input() animationDelay: number = 0;
+  @Input() animationDelay = 0;
 
   constructor() { }
 

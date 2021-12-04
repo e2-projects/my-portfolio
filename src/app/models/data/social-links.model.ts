@@ -1,8 +1,8 @@
-import { DataObject } from "./data-object";
+import { DataObject } from './data-object';
 
 export interface SocialLinks extends DataObject {
-    linkedinUrl: string,
-    facebookUrl: string,
-    overflowUrl: string,
-    githubUrl: string
+    linkedinUrl: string;
+    facebookUrl: string;
+    overflowUrl: string;
+    githubUrl: string;
 }

@@ -10,7 +10,7 @@ export function Unsubscribable<T extends Constructor<{}>>(Base: T = (class {} as
 
   return class extends Base implements OnDestroy {
     unsubscribe = new Subject<void>();
- 
+
     ngOnDestroy(): void {
       this.unsubscribe.next();
       this.unsubscribe.complete();

@@ -10,7 +10,7 @@ export class TakeEveryPipe implements PipeTransform {
     if (!takeFirst) {
       elements.shift();
     }
-    arr = elements.filter((value, index, array) => index % selector == 0);
+    arr = elements.filter((value, index, array) => index % selector === 0);
     return arr;
   }
 
