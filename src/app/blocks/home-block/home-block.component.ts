@@ -1,7 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { Collection } from 'src/app/constants/collections';
 import { Company } from 'src/app/models/data/company.model';
+import { Unsubscribable } from 'src/app/operators/unsubscribtion.operator';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { HomePageData } from './models/home-page.data';
 
@@ -10,7 +12,7 @@ import { HomePageData } from './models/home-page.data';
   templateUrl: './home-block.component.html',
   styleUrls: ['./home-block.component.scss']
 })
-export class HomeBlockComponent implements OnInit {
+export class HomeBlockComponent extends Unsubscribable() implements OnInit {
 
   title: string;
   name: string;
@@ -19,10 +21,13 @@ export class HomeBlockComponent implements OnInit {
   description: string;
   loading = true;
 
-  constructor(private firestore: FirestoreService) { }
+  constructor(private firestore: FirestoreService) {
+    super();
+  }
 
   ngOnInit(): void {
     this.firestore.getCollectionItem<HomePageData>(Collection.HOME_TAB_DATA)
+                  .pipe(takeUntil(this.unsubscribe))
                   .subscribe(data => this.setupData(data));
   }
 

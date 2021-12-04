@@ -20,6 +20,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CurvesAnimationComponent } from '../animations/curves-animation/curves-animation.component';
 import { NavigationBlockComponent } from './navigation-block/navigation-block.component';
 import { ProgressAnimationComponent } from '../animations/progress-animation/progress-animation.component';
+import { TakeEveryPipe } from '../pipes/take-every.pipe';
+import { AboutTextContainerComponent } from './about-block/components/about-text-container/about-text-container.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ProgressAnimationComponent } from '../animations/progress-animation/pro
     AboutBlockComponent,
     CurvesAnimationComponent,
     NavigationBlockComponent,
-    ProgressAnimationComponent
+    ProgressAnimationComponent,
+    TakeEveryPipe,
+    AboutTextContainerComponent
   ],
   imports: [
     CommonModule,

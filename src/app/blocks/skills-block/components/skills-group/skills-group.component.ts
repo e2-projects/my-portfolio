@@ -10,7 +10,7 @@ export class SkillsGroupComponent implements OnInit {
 
   @Input()
   skillGroup: SkillGroup;
-  
+
   constructor() { }
 
   ngOnInit(): void {
