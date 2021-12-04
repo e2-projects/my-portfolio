@@ -1,8 +1,15 @@
 <div class="collapsible-content">
-    <div><b>Possition: </b>{{data.position}}</div>
-    <div><b>Projects: </b></div>
-    <ul>
-        <li *ngFor="let project of data.projects">{{project}}</li>
-    </ul>
-    <div><b>Stack: </b>{{data.stack}}</div>
+    <ng-container *ngFor="let position of positions">
+        <div class="neu text-display p-3">
+            <div class="position-title-container">
+                <div class="position-title">{{position.name}}</div>
+                <div class="position-date">{{position.startDate}} - {{position.endDate}}</div>
+            </div>
+            <div><b>Projects: </b></div>
+            <ul>
+                <li *ngFor="let project of position.projects">{{project}}</li>
+            </ul>
+            <div><b>Stack: </b>{{position.stack}}</div>
+        </div>
+    </ng-container>
 </div>

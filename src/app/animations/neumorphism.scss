@@ -1,0 +1,113 @@
+$neu-background-color: #EBECF0;
+$neu-dark-background-color: #d6d8e0;
+$neu-lightgrey-color: #aaaaaa;
+$neu-lightblue-color: #61677C;
+$neu-shadow: #d3d3dd;
+// $neu-white: #e6e6e9;
+$neu-white: #efeff8;
+$neu-primary: #007bff;
+$neu-error: rgb(236, 0, 0);
+
+.form-container {
+    width: 70%;
+}
+
+input.neu,
+button.neu,
+select.neu,
+div.neu,
+textarea.neu {
+    border: 0;
+    outline: 0;
+    border-radius: 1.5rem;
+    padding: .7rem;
+    background: transparent;
+    max-width: 100%;
+}
+
+input.neu,
+select.neu,
+button.neu {
+    font-size: 1rem;
+    text-shadow: 1px 1px 0 $neu-white;
+}
+
+button.neu {
+    cursor: pointer;
+    color: $neu-lightblue-color;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: -2px -2px 2px $neu-white,
+                2px 2px 2px $neu-shadow;
+
+    &:hover {
+        box-shadow: -1px -1px 2px $neu-white,
+                    1px 1px 2px $neu-shadow;
+    }
+
+    &:active {
+        box-shadow: inset 1px 1px 2px $neu-shadow,
+                    inset -1px -1px 2px $neu-white;
+    }
+
+    &:disabled {
+        color: grey;
+        box-shadow: none;
+    }
+}
+
+button.neu.primary {
+    color: $neu-primary;
+    text-shadow: none;
+    min-width: 5rem;
+    padding: .5rem;
+    font-size: .8rem;
+    &:disabled {
+        color: grey;
+        cursor: auto;
+    }
+}
+
+input.neu,
+select.neu,
+textarea.neu {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: inset 3px 3px 4px $neu-shadow,
+                inset -3px -3px 4px $neu-white;
+
+    &:focus {
+        box-shadow: inset 2px 2px 2px $neu-shadow,
+                    inset -2px -2px 2px $neu-white;
+    }
+
+    &:read-only:focus {
+        box-shadow: inset 2px 2px 4px $neu-shadow,
+                    inset -2px -2px 4px $neu-white;
+    }
+
+    &.neu-error {
+        -webkit-box-shadow:inset 0px 0px 0px 1px $neu-error;
+        -moz-box-shadow:inset 0px 0px 0px 1px $neu-error;
+        box-shadow:inset 0px 0px 0px 1px $neu-error;
+    }
+}
+
+div.neu.text-display {
+    width: 100%;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: inset 1px 1px 2px #BABECC,
+                inset -1px -1px 2px #FFFFFF;
+}

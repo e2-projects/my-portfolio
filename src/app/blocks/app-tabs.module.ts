@@ -22,6 +22,7 @@ import { NavigationBlockComponent } from './navigation-block/navigation-block.co
 import { ProgressAnimationComponent } from '../animations/progress-animation/progress-animation.component';
 import { TakeEveryPipe } from '../pipes/take-every.pipe';
 import { AboutTextContainerComponent } from './about-block/components/about-text-container/about-text-container.component';
+import { WorkplaceSortPipe } from '../pipes/workplace-sort.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AboutTextContainerComponent } from './about-block/components/about-text
     NavigationBlockComponent,
     ProgressAnimationComponent,
     TakeEveryPipe,
-    AboutTextContainerComponent
+    AboutTextContainerComponent,
+    WorkplaceSortPipe
   ],
   imports: [
     CommonModule,
@@ -68,7 +70,8 @@ import { AboutTextContainerComponent } from './about-block/components/about-text
     AboutBlockComponent,
     CurvesAnimationComponent,
     NavigationBlockComponent,
-    ProgressAnimationComponent
+    ProgressAnimationComponent,
+    WorkplaceSortPipe
   ]
 })
 export class AppTabsModule { }
