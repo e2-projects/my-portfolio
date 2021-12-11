@@ -4,7 +4,7 @@ import { Mock } from 'src/app/testing/mock-data.test';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { AboutBlockComponent } from './about-block.component';
 
-fdescribe('AboutBlockComponent', () => {
+describe('AboutBlockComponent', () => {
   let component: AboutBlockComponent;
   let fixture: ComponentFixture<AboutBlockComponent>;
 

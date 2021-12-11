@@ -6,14 +6,21 @@ class AboutTextContainerComponent {
     @Input() animationDelay: any;
 }
 
+@Component({selector: 'app-contact-form'})
+class ContactFormComponent {}
+
+
+
 @NgModule({
     declarations: [
-        AboutTextContainerComponent
+        AboutTextContainerComponent,
+        ContactFormComponent
     ],
     imports: [],
     providers: [],
     exports: [
-        AboutTextContainerComponent
+        AboutTextContainerComponent,
+        ContactFormComponent
     ],
     bootstrap: []
   })

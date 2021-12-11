@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { ContactsBlockComponent } from './contacts-block.component';
 
 describe('ContactsBlockComponent', () => {
@@ -8,7 +8,12 @@ describe('ContactsBlockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactsBlockComponent ]
+      declarations: [
+        ContactsBlockComponent
+      ],
+      imports: [
+        MockModule
+      ]
     })
     .compileComponents();
   });
