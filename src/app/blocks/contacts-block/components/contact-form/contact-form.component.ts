@@ -4,7 +4,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.scss']
+  styleUrls: [
+    './contact-form.component.scss',
+    '../../../../animations/neumorphism.scss'
+  ]
 })
 export class ContactFormComponent implements OnInit {
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MOCKED_WORK_EXPERIENCES, WorkExperience } from './models/work-experience.data';
+import { Workplace } from 'src/app/models/data/workplace.model';
 
 @Component({
   selector: 'app-experience-block',
@@ -8,12 +8,68 @@ import { MOCKED_WORK_EXPERIENCES, WorkExperience } from './models/work-experienc
 })
 export class ExperienceBlockComponent implements OnInit {
 
-  experiences: WorkExperience[];
+  workplaces: Workplace[];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.experiences = MOCKED_WORK_EXPERIENCES;
+    /* MOCK */
+    this.workplaces = [
+      {
+        companyName: 'Google',
+        positions: [
+          {
+            name: 'Business Analyst',
+            projects: [
+              'Facebook search panel.',
+              'Facebook for business.',
+              'Facebook icons.'
+            ],
+            stack: 'Photoshop, Google Search, Android SDK, Facebook SDK',
+            startDate: '2015/11/15',
+            endDate: '2016/02/10'
+          }
+        ]
+      },
+      {
+        companyName: 'Awesome Bank',
+        positions: [
+          {
+            name: 'Software engineer',
+            projects: [
+              'Bank main frame application'
+            ],
+            stack: 'COBOL, MS Servers',
+            startDate: '2012/11/15',
+            endDate: '2013/02/10'
+          }
+        ]
+      },
+      {
+        companyName: 'Facebook',
+        positions: [
+          {
+            name: 'Business Analyst',
+            projects: [
+              'Facebook search panel.',
+              'Facebook for business.',
+              'Facebook icons.'
+            ],
+            stack: 'Photoshop, Google Search, Android SDK, Facebook SDK',
+            startDate: '2017/01/10',
+            endDate: '2018/06/23'
+          },
+          {
+            name: 'Solution Developer',
+            projects: [
+              'Sushi restaurant mobile app. Mobile app is used by user who wants to pre-order food'
+            ],
+            stack: 'Java, Kotlin, Android SDK, C++',
+            startDate: '2019/05/15'
+          }
+        ]
+      }
+    ];
   }
 
 }
