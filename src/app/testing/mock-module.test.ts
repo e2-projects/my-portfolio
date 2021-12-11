@@ -10,17 +10,33 @@ class AboutTextContainerComponent {
 class ContactFormComponent {}
 
 
+@Component({selector: 'app-workplace-collapsible-content'})
+class WorkplaceCollapsibleContentComponent {
+    @Input() positions: any;
+}
+
+@Component({selector: 'app-workplace-collapsible'})
+class WorkplaceCollapsibleComponent {
+    @Input() visible: any;
+    @Input() workplace: any;
+    @Input() animationDelay: any;
+}
+
 
 @NgModule({
     declarations: [
         AboutTextContainerComponent,
-        ContactFormComponent
+        ContactFormComponent,
+        WorkplaceCollapsibleContentComponent,
+        WorkplaceCollapsibleComponent
     ],
     imports: [],
     providers: [],
     exports: [
         AboutTextContainerComponent,
-        ContactFormComponent
+        ContactFormComponent,
+        WorkplaceCollapsibleContentComponent,
+        WorkplaceCollapsibleComponent
     ],
     bootstrap: []
   })
