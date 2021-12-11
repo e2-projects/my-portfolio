@@ -1,6 +1,6 @@
 import { Input } from '@angular/core';
 import { Component } from '@angular/core';
-import { WorkingPosition } from '../../experience-block.component';
+import { WorkingPosition } from 'src/app/models/data/workplace.model';
 
 @Component({
   selector: 'app-workplace-collapsible-content',

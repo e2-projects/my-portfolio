@@ -23,6 +23,7 @@ import { ProgressAnimationComponent } from '../animations/progress-animation/pro
 import { TakeEveryPipe } from '../pipes/take-every.pipe';
 import { AboutTextContainerComponent } from './about-block/components/about-text-container/about-text-container.component';
 import { WorkplaceSortPipe } from '../pipes/workplace-sort.pipe';
+import { MultilinePipe } from '../pipes/multiline.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WorkplaceSortPipe } from '../pipes/workplace-sort.pipe';
     ProgressAnimationComponent,
     TakeEveryPipe,
     AboutTextContainerComponent,
-    WorkplaceSortPipe
+    WorkplaceSortPipe,
+    MultilinePipe
   ],
   imports: [
     CommonModule,

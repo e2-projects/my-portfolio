@@ -1,5 +1,5 @@
 <div class="m-3">
     <span *ngFor="let workplace of workplaces | workplaceSort; let i = index">
-        <app-workplace-collapsible [workplace]="workplace" [animationDelay]="i*300"></app-workplace-collapsible>
+        <app-workplace-collapsible [workplace]="workplace" [animationDelay]="i*300" [visible]="i===0"></app-workplace-collapsible>
     </span>
 </div>

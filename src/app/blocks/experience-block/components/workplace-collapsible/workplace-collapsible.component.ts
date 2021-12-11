@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FadeInAnimation } from 'src/app/animations/custom-animations';
-import { Workplace } from '../../experience-block.component';
+import { Workplace } from 'src/app/models/data/workplace.model';
 
 @Component({
   selector: 'app-workplace-collapsible',
@@ -10,14 +10,13 @@ import { Workplace } from '../../experience-block.component';
 })
 export class WorkplaceCollapsibleComponent implements OnInit {
 
-  visible: boolean;
+  @Input() visible ?= false;
   @Input() workplace: Workplace;
   @Input() animationDelay = 0;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.visible = false;
   }
 
   toggle(): void {

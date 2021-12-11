@@ -1,18 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Workplace {
-  companyName: string;
-  endDate?: string;
-  positions: WorkingPosition[];
-}
-
-export interface WorkingPosition {
-  name: string;
-  projects: string[];
-  stack: string;
-  startDate: string;
-  endDate?: string;
-}
+import { Workplace } from 'src/app/models/data/workplace.model';
 
 @Component({
   selector: 'app-experience-block',
@@ -26,6 +13,7 @@ export class ExperienceBlockComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    /* MOCK */
     this.workplaces = [
       {
         companyName: 'Google',

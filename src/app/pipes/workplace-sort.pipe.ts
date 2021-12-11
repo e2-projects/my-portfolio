@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Workplace } from '../blocks/experience-block/experience-block.component';
+import { WorkingPosition, Workplace } from '../models/data/workplace.model';
 
 @Pipe({
   name: 'workplaceSort'
@@ -15,13 +15,15 @@ export class WorkplaceSortPipe implements PipeTransform {
   private sort(workplaces: Workplace[]): Workplace[] {
     workplaces.forEach(company => this.sortCompanyPositions(company));
     workplaces.sort((company1, company2) => {
-      return company1.endDate !== 'Present' ? new Date(company1.endDate).getMilliseconds() - new Date(company2.endDate).getMilliseconds() : -1;
+      return company1.endDate !== this.PRESENT ?
+            this.getDateInMilis(company1.endDate) - this.getDateInMilis(company2.endDate) :
+            -1;
     });
     return workplaces;
   }
 
   private sortCompanyPositions(company: Workplace): void {
-    const position = company.positions.find(position => position.endDate === undefined || position.endDate === null || position.endDate.trim() === '');
+    const position = company.positions.find(position => this.isCurrentPosition(position));
       if (position) {
         const index = company.positions.findIndex(p => p === position);
         if (index > -1) {
@@ -39,10 +41,17 @@ export class WorkplaceSortPipe implements PipeTransform {
 
       company.positions.reverse();
       company.endDate = company.positions[0].endDate;
+      company.startDate = company.positions[company.positions.length - 1].startDate;
   }
 
   private getDateInMilis(date: string) {
     return new Date(date).getMilliseconds();
+  }
+
+  private isCurrentPosition(position: WorkingPosition): boolean {
+    return position.endDate === undefined ||
+          position.endDate === null ||
+          position.endDate.trim() === '';
   }
 
 }
