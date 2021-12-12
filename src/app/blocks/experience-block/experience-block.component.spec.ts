@@ -3,7 +3,7 @@ import { WorkplaceSortPipe } from 'src/app/pipes/workplace-sort.pipe';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { ExperienceBlockComponent } from './experience-block.component';
 
-fdescribe('ExperienceBlockComponent', () => {
+describe('ExperienceBlockComponent', () => {
   let component: ExperienceBlockComponent;
   let fixture: ComponentFixture<ExperienceBlockComponent>;
 

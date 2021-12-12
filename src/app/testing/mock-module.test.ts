@@ -1,4 +1,6 @@
-import { Component, Input, NgModule } from '@angular/core';
+import { Component, Injectable, Input, NgModule } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Collection } from '../constants/collections';
 
 @Component({selector: 'app-about-text-container'})
 class AboutTextContainerComponent {
@@ -23,6 +25,18 @@ class WorkplaceCollapsibleComponent {
 }
 
 
+@Injectable({providedIn: 'root'})
+class FirestoreService {
+    getCollectionItem<T>(collection: string | Collection): Observable<any> {
+        return of('');
+    }
+    
+    getCollectionItems<T>(collection: string | Collection): Observable<any[]> {
+        return of([]);
+    }
+}
+
+
 @NgModule({
     declarations: [
         AboutTextContainerComponent,
@@ -31,15 +45,18 @@ class WorkplaceCollapsibleComponent {
         WorkplaceCollapsibleComponent
     ],
     imports: [],
-    providers: [],
+    providers: [
+        FirestoreService
+    ],
     exports: [
         AboutTextContainerComponent,
         ContactFormComponent,
         WorkplaceCollapsibleContentComponent,
-        WorkplaceCollapsibleComponent
+        WorkplaceCollapsibleComponent,
+        FirestoreService
     ],
     bootstrap: []
   })
 export class MockModule {
-
+    static firestoreService: FirestoreService = new FirestoreService();
 }

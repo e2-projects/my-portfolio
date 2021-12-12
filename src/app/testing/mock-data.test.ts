@@ -1,3 +1,4 @@
+import { HomePageData } from '../blocks/home-block/models/home-page.data';
 import { AboutDescription } from '../models/data/about.model';
 import { WorkingPosition, Workplace } from '../models/data/workplace.model';
 
@@ -83,5 +84,16 @@ export class Mock {
         Mock.workplaceAwesomeBank,
         Mock.workplaceFacebook
     ];
+
+    public static homeTabData: HomePageData = {
+        fullName: 'John Wick',
+        address: 'New York, US',
+        company: {
+            name: 'Russian crime syndicate',
+            url: ''
+        },
+        description: 'Baba Yaga',
+        position: 'Contract Killer'
+    }
     
 }
