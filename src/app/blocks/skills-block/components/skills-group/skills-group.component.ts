@@ -8,8 +8,7 @@ import { SkillGroup } from '../../models/skills.data';
 })
 export class SkillsGroupComponent implements OnInit {
 
-  @Input()
-  skillGroup: SkillGroup;
+  @Input() skillGroup: SkillGroup;
 
   constructor() { }
 

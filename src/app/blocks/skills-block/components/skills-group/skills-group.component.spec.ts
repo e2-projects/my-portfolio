@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { Mock } from 'src/app/testing/mock-data.test';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { SkillsGroupComponent } from './skills-group.component';
 
 describe('SkillsGroupComponent', () => {
@@ -8,7 +9,12 @@ describe('SkillsGroupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkillsGroupComponent ]
+      declarations: [
+        SkillsGroupComponent
+      ],
+      imports: [
+        MockModule
+      ]
     })
     .compileComponents();
   });
@@ -16,6 +22,7 @@ describe('SkillsGroupComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SkillsGroupComponent);
     component = fixture.componentInstance;
+    component.skillGroup = Mock.skillGroup;
     fixture.detectChanges();
   });
 

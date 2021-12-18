@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { SkillsBlockComponent } from './skills-block.component';
 
 describe('SkillsBlockComponent', () => {
@@ -8,7 +9,15 @@ describe('SkillsBlockComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkillsBlockComponent ]
+      declarations: [
+        SkillsBlockComponent
+      ],
+      imports: [
+        MockModule
+      ],
+      providers: [
+        { provide: FirestoreService, useValue: MockModule.firestoreService },
+      ]
     })
     .compileComponents();
   });

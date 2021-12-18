@@ -24,6 +24,20 @@ class WorkplaceCollapsibleComponent {
     @Input() animationDelay: any;
 }
 
+@Component({selector: 'app-skills-group-content'})
+class SkillsGroupContentComponent {
+    @Input() skills: any;
+}
+
+@Component({selector: 'app-progress-animation'})
+class ProgressAnimationComponent {
+    @Input() progress: any;
+}
+
+@Component({selector: 'app-skills-group'})
+class SkillsGroupComponent {
+    @Input() skillGroup: any;
+}
 
 @Injectable({providedIn: 'root'})
 class FirestoreService {
@@ -42,7 +56,10 @@ class FirestoreService {
         AboutTextContainerComponent,
         ContactFormComponent,
         WorkplaceCollapsibleContentComponent,
-        WorkplaceCollapsibleComponent
+        WorkplaceCollapsibleComponent,
+        SkillsGroupContentComponent,
+        ProgressAnimationComponent,
+        SkillsGroupComponent
     ],
     imports: [],
     providers: [
@@ -53,7 +70,10 @@ class FirestoreService {
         ContactFormComponent,
         WorkplaceCollapsibleContentComponent,
         WorkplaceCollapsibleComponent,
-        FirestoreService
+        FirestoreService,
+        SkillsGroupContentComponent,
+        ProgressAnimationComponent,
+        SkillsGroupComponent
     ],
     bootstrap: []
   })
