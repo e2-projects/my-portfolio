@@ -7,7 +7,9 @@ describe('WorkplaceCollapsibleContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorkplaceCollapsibleContentComponent ]
+      declarations: [
+        WorkplaceCollapsibleContentComponent
+      ]
     })
     .compileComponents();
   });
@@ -15,6 +17,7 @@ describe('WorkplaceCollapsibleContentComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WorkplaceCollapsibleContentComponent);
     component = fixture.componentInstance;
+    component.positions = [];
     fixture.detectChanges();
   });
 

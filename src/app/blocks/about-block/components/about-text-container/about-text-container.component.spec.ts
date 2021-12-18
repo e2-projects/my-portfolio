@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MultilinePipe } from 'src/app/pipes/multiline.pipe';
+import { Mock } from 'src/app/testing/mock-data.test';
 import { AboutTextContainerComponent } from './about-text-container.component';
 
 describe('AboutTextContainerComponent', () => {
@@ -7,7 +10,13 @@ describe('AboutTextContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AboutTextContainerComponent ]
+      declarations: [
+        AboutTextContainerComponent,
+        MultilinePipe
+      ],
+      imports: [
+        BrowserAnimationsModule
+      ]
     })
     .compileComponents();
   });
@@ -15,6 +24,7 @@ describe('AboutTextContainerComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AboutTextContainerComponent);
     component = fixture.componentInstance;
+    component.data = Mock.aboutDescription[0];
     fixture.detectChanges();
   });
 

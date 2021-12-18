@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WorkplaceCollapsibleContentComponent } from '../workplace-collapsible-content/workplace-collapsible-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Mock } from 'src/app/testing/mock-data.test';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { WorkplaceCollapsibleComponent } from './workplace-collapsible.component';
 
 describe('WorkplaceCollapsibleComponent', () => {
@@ -9,8 +11,11 @@ describe('WorkplaceCollapsibleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        WorkplaceCollapsibleComponent,
-        WorkplaceCollapsibleContentComponent
+        WorkplaceCollapsibleComponent
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        MockModule
       ]
     })
     .compileComponents();
@@ -19,6 +24,7 @@ describe('WorkplaceCollapsibleComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WorkplaceCollapsibleComponent);
     component = fixture.componentInstance;
+    component.workplace = Mock.workplaceFacebook;
     fixture.detectChanges();
   });
 

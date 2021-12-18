@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { SkillsGroupContentComponent } from './skills-group-content.component';
 
 describe('SkillsGroupContentComponent', () => {
@@ -8,7 +8,12 @@ describe('SkillsGroupContentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SkillsGroupContentComponent ]
+      declarations: [
+        SkillsGroupContentComponent
+      ],
+      imports: [
+        MockModule
+      ]
     })
     .compileComponents();
   });

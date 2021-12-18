@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WorkplaceCollapsibleComponent } from './components/workplace-collapsible/workplace-collapsible.component';
+import { WorkplaceSortPipe } from 'src/app/pipes/workplace-sort.pipe';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { ExperienceBlockComponent } from './experience-block.component';
 
 describe('ExperienceBlockComponent', () => {
@@ -10,7 +11,10 @@ describe('ExperienceBlockComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         ExperienceBlockComponent,
-        WorkplaceCollapsibleComponent
+        WorkplaceSortPipe
+      ],
+      imports: [
+        MockModule
       ]
     })
     .compileComponents();
