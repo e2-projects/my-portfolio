@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SkillsBlockComponent } from './skills-block/skills-block.component';
 import { SkillsGroupComponent } from './skills-block/components/skills-group/skills-group.component';
 import { SkillsGroupContentComponent } from './skills-block/components/skills-group-content/skills-group-content.component';
-import { SkillRateComponent } from './skills-block/components/skill-rate/skill-rate.component';
 import { NavigationButtonsComponent } from './navigation-block/components/navigation-buttons/navigation-buttons.component';
 import { SocialLinksBarComponent } from './navigation-block/components/social-links-bar/social-links-bar.component';
 import { HomeBlockComponent } from './home-block/home-block.component';
@@ -29,7 +28,6 @@ import { MultilinePipe } from '../pipes/multiline.pipe';
   declarations: [
     SkillsGroupComponent,
     SkillsGroupContentComponent,
-    SkillRateComponent,
     SkillsBlockComponent,
     NavigationButtonsComponent,
     SocialLinksBarComponent,
@@ -59,7 +57,6 @@ import { MultilinePipe } from '../pipes/multiline.pipe';
   exports: [
     SkillsGroupComponent,
     SkillsGroupContentComponent,
-    SkillRateComponent,
     SkillsBlockComponent,
     NavigationButtonsComponent,
     SocialLinksBarComponent,

@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { MockedAboutBlockComponent,
         MockedContactsBlockComponent,
         MockedExperienceBlockComponent,
-        MockedHomeBlockComponent } from 'src/test/test-components';
+        MockedHomeBlockComponent } from 'src/app/testing/mock-module.test';
 import { NavigationButtonsComponent } from './navigation-buttons.component';
 
 describe('NavigationButtonsComponent', () => {
@@ -14,6 +15,7 @@ describe('NavigationButtonsComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ NavigationButtonsComponent ],
       imports: [
+        MockModule,
         RouterTestingModule.withRoutes([
           { path: 'home', component: MockedHomeBlockComponent },
           { path: 'about', component: MockedAboutBlockComponent },

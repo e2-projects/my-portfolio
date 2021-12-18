@@ -39,6 +39,27 @@ class SkillsGroupComponent {
     @Input() skillGroup: any;
 }
 
+@Component({selector: 'app-curves-animation'})
+class CurvesAnimationComponent { }
+
+@Component({selector: 'app-navigation-block'})
+class NavigationBlockComponent { }
+
+@Component({selector: 'app-home-block'})
+export class MockedHomeBlockComponent { }
+
+@Component({selector: 'app-experience-block'})
+export class MockedExperienceBlockComponent { }
+
+@Component({selector: 'app-about-block'})
+export class MockedAboutBlockComponent { }
+
+@Component({selector: 'app-contatcs-block'})
+export class MockedContactsBlockComponent { }
+
+@Component({selector: 'app-navigation-buttons'})
+export class MockedNavigationButtonsComponent { }
+
 @Injectable({providedIn: 'root'})
 class FirestoreService {
     getCollectionItem<T>(collection: string | Collection): Observable<any> {
@@ -59,7 +80,9 @@ class FirestoreService {
         WorkplaceCollapsibleComponent,
         SkillsGroupContentComponent,
         ProgressAnimationComponent,
-        SkillsGroupComponent
+        SkillsGroupComponent,
+        CurvesAnimationComponent,
+        NavigationBlockComponent
     ],
     imports: [],
     providers: [
@@ -73,7 +96,9 @@ class FirestoreService {
         FirestoreService,
         SkillsGroupContentComponent,
         ProgressAnimationComponent,
-        SkillsGroupComponent
+        SkillsGroupComponent,
+        CurvesAnimationComponent,
+        NavigationBlockComponent
     ],
     bootstrap: []
   })
