@@ -65,7 +65,7 @@ class FirestoreService {
     getCollectionItem<T>(collection: string | Collection): Observable<any> {
         return of('');
     }
-    
+
     getCollectionItems<T>(collection: string | Collection): Observable<any[]> {
         return of([]);
     }
