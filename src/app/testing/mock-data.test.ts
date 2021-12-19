@@ -95,22 +95,22 @@ export class Mock {
         },
         description: 'Baba Yaga',
         position: 'Contract Killer'
-    }
+    };
 
     public static skillLevel2: Skill = {
         name: 'Skill 1',
         level: '2'
-    }
+    };
 
     public static skillLevel5: Skill = {
         name: 'Skill 2',
         level: '5'
-    }
+    };
 
     public static skillLevel1: Skill = {
         name: 'Skill 3',
         level: '1'
-    }
+    };
 
     public static skillGroup: SkillGroup = {
         name: 'Skill Group 1',
@@ -120,6 +120,6 @@ export class Mock {
             Mock.skillLevel1,
             Mock.skillLevel5
         ]
-    }
-    
+    };
+
 }

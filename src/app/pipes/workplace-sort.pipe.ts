@@ -23,28 +23,28 @@ export class WorkplaceSortPipe implements PipeTransform {
   }
 
   private sortCompanyPositions(company: Workplace): void {
-    const position = company.positions.find(position => this.isCurrentPosition(position));
-      if (position) {
-        const index = company.positions.findIndex(p => p === position);
-        if (index > -1) {
-          company.positions.splice(index, 1);
-        }
-        position.endDate = this.PRESENT;
+    const position = company.positions.find((p: WorkingPosition) => this.isCurrentPosition(p));
+    if (position) {
+      const index = company.positions.findIndex(p => p === position);
+      if (index > -1) {
+        company.positions.splice(index, 1);
       }
-      company.positions.sort((position1, position2) => {
-        return this.getDateInMilis(position1.endDate) - this.getDateInMilis(position2.endDate);
-      });
-      
-      if (position) {
-        company.positions.push(position);
-      }
+      position.endDate = this.PRESENT;
+    }
+    company.positions.sort((position1, position2) => {
+      return this.getDateInMilis(position1.endDate) - this.getDateInMilis(position2.endDate);
+    });
 
-      company.positions.reverse();
-      company.endDate = company.positions[0].endDate;
-      company.startDate = company.positions[company.positions.length - 1].startDate;
+    if (position) {
+      company.positions.push(position);
+    }
+
+    company.positions.reverse();
+    company.endDate = company.positions[0].endDate;
+    company.startDate = company.positions[company.positions.length - 1].startDate;
   }
 
-  private getDateInMilis(date: string) {
+  private getDateInMilis(date: string): number {
     return new Date(date).getMilliseconds();
   }
 

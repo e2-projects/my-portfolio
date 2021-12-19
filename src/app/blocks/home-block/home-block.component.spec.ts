@@ -32,7 +32,7 @@ describe('HomeBlockComponent', () => {
     fixture = TestBed.createComponent(HomeBlockComponent);
     component = fixture.componentInstance;
     firestoreService = TestBed.inject(FirestoreService);
-    firestoreSpy = spyOn(firestoreService, 'getCollectionItem').and.callFake(() => of(Mock.homeTabData as any))
+    firestoreSpy = spyOn(firestoreService, 'getCollectionItem').and.callFake(() => of(Mock.homeTabData as any));
     fixture.detectChanges();
   });
 
