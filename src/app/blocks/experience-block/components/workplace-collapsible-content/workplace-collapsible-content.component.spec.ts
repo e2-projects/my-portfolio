@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { MockModule } from 'src/app/testing/mock-module.test';
 import { WorkplaceCollapsibleContentComponent } from './workplace-collapsible-content.component';
 
 describe('WorkplaceCollapsibleContentComponent', () => {
@@ -9,6 +11,9 @@ describe('WorkplaceCollapsibleContentComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         WorkplaceCollapsibleContentComponent
+      ],
+      providers: [
+        { provide: FirestoreService, useValue: MockModule.firestoreService },
       ]
     })
     .compileComponents();
@@ -21,7 +26,7 @@ describe('WorkplaceCollapsibleContentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

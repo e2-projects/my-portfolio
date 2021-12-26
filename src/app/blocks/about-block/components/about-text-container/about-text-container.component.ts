@@ -12,7 +12,7 @@ import { AboutDescription } from 'src/app/models/data/about.model';
 export class AboutTextContainerComponent {
 
   @Input() animationDelay = 0;
-  @Input() data!: AboutDescription;
+  @Input() data?: AboutDescription;
 
   constructor() { }
 

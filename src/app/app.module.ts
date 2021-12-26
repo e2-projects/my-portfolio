@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main/main-page/main-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppTabsModule } from './blocks/app-tabs.module';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireStorageModule, BUCKET } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireStorageModule, BUCKET } from '@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FirestoreService } from 'src/app/services/firestore.service';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { SkillsGroupContentComponent } from './skills-group-content.component';
 
@@ -13,6 +14,9 @@ describe('SkillsGroupContentComponent', () => {
       ],
       imports: [
         MockModule
+      ],
+      providers: [
+        { provide: FirestoreService, useValue: MockModule.firestoreService },
       ]
     })
     .compileComponents();
@@ -24,7 +28,7 @@ describe('SkillsGroupContentComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

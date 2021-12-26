@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TakeEveryPipe implements PipeTransform {
 
-  transform(elements: unknown[], selector: number = 1, takeFirst = true): unknown[] {
+  transform(elements: any[], selector: number = 1, takeFirst = true): any[] {
     let arr = [];
     if (!takeFirst) {
       elements.shift();

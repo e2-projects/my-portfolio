@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WorkplaceSortPipe } from 'src/app/pipes/workplace-sort.pipe';
+import { FirestoreService } from 'src/app/services/firestore.service';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { ExperienceBlockComponent } from './experience-block.component';
 
@@ -15,6 +16,9 @@ describe('ExperienceBlockComponent', () => {
       ],
       imports: [
         MockModule
+      ],
+      providers: [
+        { provide: FirestoreService, useValue: MockModule.firestoreService },
       ]
     })
     .compileComponents();
@@ -26,7 +30,7 @@ describe('ExperienceBlockComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

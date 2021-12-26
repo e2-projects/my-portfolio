@@ -1,10 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FirestoreService } from 'src/app/services/firestore.service';
 import { MockModule } from 'src/app/testing/mock-module.test';
-import { MockedAboutBlockComponent,
-        MockedContactsBlockComponent,
-        MockedExperienceBlockComponent,
-        MockedHomeBlockComponent } from 'src/app/testing/mock-module.test';
 import { NavigationButtonsComponent } from './navigation-buttons.component';
 
 describe('NavigationButtonsComponent', () => {
@@ -16,12 +13,10 @@ describe('NavigationButtonsComponent', () => {
       declarations: [ NavigationButtonsComponent ],
       imports: [
         MockModule,
-        RouterTestingModule.withRoutes([
-          { path: 'home', component: MockedHomeBlockComponent },
-          { path: 'about', component: MockedAboutBlockComponent },
-          { path: 'experience', component: MockedExperienceBlockComponent },
-          { path: 'contacts', component: MockedContactsBlockComponent }
-        ]),
+        RouterTestingModule.withRoutes(MockModule.routes),
+      ],
+      providers: [
+        { provide: FirestoreService, useValue: MockModule.firestoreService },
       ]
     })
     .compileComponents();
@@ -33,7 +28,7 @@ describe('NavigationButtonsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });

@@ -10,7 +10,7 @@ describe('HomeBlockComponent', () => {
   let component: HomeBlockComponent;
   let fixture: ComponentFixture<HomeBlockComponent>;
   let firestoreService: FirestoreService;
-  let firestoreSpy: jasmine.Spy;
+  let firestoreSpy: jest.SpyInstance;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,11 +32,11 @@ describe('HomeBlockComponent', () => {
     fixture = TestBed.createComponent(HomeBlockComponent);
     component = fixture.componentInstance;
     firestoreService = TestBed.inject(FirestoreService);
-    firestoreSpy = spyOn(firestoreService, 'getCollectionItem').and.callFake(() => of(Mock.homeTabData as any));
+    firestoreSpy = jest.spyOn(firestoreService, 'getCollectionItem').mockReturnValueOnce(of(Mock.homeTabData as any));
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });
