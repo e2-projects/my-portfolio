@@ -6,7 +6,7 @@
     "clean": "rimraf ./dist",
     "start": "ng serve -c local",
     "build": "ng build",
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build -c production",
     "test": "jest",
     "lint": "ng lint",
     "build:ci": "npm run clean && npm run build:prod"
