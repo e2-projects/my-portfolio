@@ -120,5 +120,5 @@ export class MockModule {
         { path: 'about', component: AboutBlockComponent },
         { path: 'experience', component: ExperienceBlockComponent },
         { path: 'contacts', component: ContactsBlockComponent }
-    ]
+    ];
 }
