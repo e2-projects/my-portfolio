@@ -25,7 +25,6 @@ describe('NavigationButtonsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NavigationButtonsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   test('should create', () => {
