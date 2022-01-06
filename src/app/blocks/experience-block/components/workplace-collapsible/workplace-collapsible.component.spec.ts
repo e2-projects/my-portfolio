@@ -35,4 +35,12 @@ describe('WorkplaceCollapsibleComponent', () => {
   test('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  test('should toggle visibility', () => {
+    expect(component.visible).toBeFalsy();
+    component.toggle();
+    expect(component.visible).toBeTruthy();
+    component.toggle();
+    expect(component.visible).toBeFalsy();
+  });
 });

@@ -27,7 +27,6 @@ describe('ExperienceBlockComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ExperienceBlockComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   test('should create', () => {

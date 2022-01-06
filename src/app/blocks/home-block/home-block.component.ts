@@ -31,7 +31,6 @@ export class HomeBlockComponent extends Unsubscribable() implements OnInit {
   }
 
   private setupData(data: HomePageData): void {
-    console.log(data);
     this.title = `Hello. I'm `;
     this.name = data.fullName;
     this.info = `I'm a ${data.position.toLowerCase()} living in ${data.address}. Currently I'm working in `;
