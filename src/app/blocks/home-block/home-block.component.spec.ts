@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { of } from 'rxjs';
+import { Collection } from 'src/app/constants/collections';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { Mock } from 'src/app/testing/mock-data.test';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { HomeBlockComponent } from './home-block.component';
+import { HomePageData } from './models/home-page.data';
 
 describe('HomeBlockComponent', () => {
   let component: HomeBlockComponent;
@@ -32,11 +34,29 @@ describe('HomeBlockComponent', () => {
     fixture = TestBed.createComponent(HomeBlockComponent);
     component = fixture.componentInstance;
     firestoreService = TestBed.inject(FirestoreService);
-    firestoreSpy = jest.spyOn(firestoreService, 'getCollectionItem').mockReturnValueOnce(of(Mock.homeTabData as any));
-    fixture.detectChanges();
+    firestoreSpy = jest.spyOn(firestoreService, 'getCollectionItem')
+                        .mockReturnValue(of(Mock.homeTabData as HomePageData));
   });
 
   test('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  test('should init home tab data', () => {
+    expect(component.loading).toBeTruthy();
+    component.ngOnInit();
+    expect(firestoreSpy).toHaveBeenCalledWith(Collection.HOME_TAB_DATA);
+    expect(component.title).toEqual(`Hello. I'm `);
+    expect(component.name).toEqual(Mock.homeTabData.fullName);
+    expect(component.info).toEqual(`I'm a ${Mock.homeTabData.position.toLowerCase()} living in ${Mock.homeTabData.address}. Currently I'm working in `);
+    expect(component.company).toEqual(Mock.homeTabData.company);
+    expect(component.description).toEqual(Mock.homeTabData.description);
+    expect(component.loading).toBeFalsy();
+  });
+
+  test('should disable loading after init', () => {
+    expect(component.loading).toBeTruthy();
+    component.ngOnInit();
+    expect(component.loading).toBeFalsy();
   });
 });
