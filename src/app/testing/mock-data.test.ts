@@ -1,9 +1,24 @@
 import { HomePageData } from '../blocks/home-block/models/home-page.data';
 import { Skill, SkillGroup } from '../blocks/skills-block/models/skills.data';
 import { AboutDescription } from '../models/data/about.model';
+import { Profile } from '../models/data/profile.model';
+import { SocialLinks } from '../models/data/social-links.model';
 import { WorkingPosition, Workplace } from '../models/data/workplace.model';
 
 export class Mock {
+
+    public static profile: Profile = {
+        name: 'John',
+        surname: 'Wick',
+        position: 'Contract Killer'
+    }
+
+    public static socialLinks: SocialLinks = {
+        linkedinUrl: 'https://linkedin.com',
+        facebookUrl: 'https://fb.com',
+        overflowUrl: 'https://stackoverflow/com',
+        githubUrl: 'https://github.com'
+    }
 
     /*  ABOUT TAB  */
     public static aboutDescription: AboutDescription[] = [
@@ -87,14 +102,14 @@ export class Mock {
     ];
 
     public static homeTabData: HomePageData = {
-        fullName: 'John Wick',
+        fullName: `${Mock.profile.name} ${Mock.profile.surname}`,
         address: 'New York, US',
         company: {
             name: 'Russian crime syndicate',
             url: ''
         },
         description: 'Baba Yaga',
-        position: 'Contract Killer'
+        position: Mock.profile.position
     };
 
     public static skillLevel2: Skill = {
