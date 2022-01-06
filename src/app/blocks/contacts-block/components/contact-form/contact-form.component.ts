@@ -24,7 +24,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   sendMessage(): void {
-    if (this.contactForm) {
+    if (this.contactForm && this.contactForm.valid) {
       const values = this.contactForm.value;
       console.log(values);
     }
