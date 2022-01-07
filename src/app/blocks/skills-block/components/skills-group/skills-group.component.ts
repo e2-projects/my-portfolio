@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SkillGroup } from '../../models/skills.data';
 
 @Component({
@@ -6,13 +6,10 @@ import { SkillGroup } from '../../models/skills.data';
   templateUrl: './skills-group.component.html',
   styleUrls: ['./skills-group.component.scss']
 })
-export class SkillsGroupComponent implements OnInit {
+export class SkillsGroupComponent {
 
   @Input() skillGroup: SkillGroup;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
