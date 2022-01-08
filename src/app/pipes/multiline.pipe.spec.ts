@@ -16,7 +16,7 @@ describe('MultilinePipe', () => {
 
   beforeEach(() => {
     pipe = new MultilinePipe();
-  })
+  });
 
   test('create an instance', () => {
     expect(pipe).toBeTruthy();
