@@ -3,7 +3,7 @@ import { TakeEveryPipe } from './take-every.pipe';
 describe('TakeEveryPipe', () => {
 
   let pipe: TakeEveryPipe;
-  const TEST_CASE = [
+  const TEST_CASES = [
     {
       elements: undefined,
       selector: undefined,
@@ -68,7 +68,7 @@ describe('TakeEveryPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  TEST_CASE.forEach(testCase => {
+  TEST_CASES.forEach(testCase => {
     test(`should transform '${testCase.elements}' arrary`, () => {
       expect(pipe.transform(testCase.elements,
                             testCase.selector,
