@@ -9,6 +9,7 @@
     "build:prod": "ng build -c production",
     "test": "jest",
     "lint": "ng lint",
+    "test:full": "npm run lint && npm run test",
     "build:ci": "npm run clean && npm run build:prod"
   },
   "private": true,

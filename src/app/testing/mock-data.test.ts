@@ -11,14 +11,14 @@ export class Mock {
         name: 'John',
         surname: 'Wick',
         position: 'Contract Killer'
-    }
+    };
 
     public static socialLinks: SocialLinks = {
         linkedinUrl: 'https://linkedin.com',
         facebookUrl: 'https://fb.com',
         overflowUrl: 'https://stackoverflow/com',
         githubUrl: 'https://github.com'
-    }
+    };
 
     /*  ABOUT TAB  */
     public static aboutDescription: AboutDescription[] = [
