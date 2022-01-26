@@ -21,7 +21,8 @@ export class ContactFormComponent implements OnInit {
 
   sendMessage(): void {
     if (this.contactForm && this.contactForm.valid) {
-      const values = this.contactForm.value as unknown;
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const values = this.contactForm.value;
       console.log(values);
     }
   }

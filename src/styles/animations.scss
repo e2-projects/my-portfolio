@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /* BOUNCE IN */
 .bounce-in {
     opacity: 0;
@@ -37,6 +39,6 @@
 
 @for $i from 1 to 5 {
     .zoom-on-hover-#{$i}:hover {
-        transform: scale(#{$i/10+1});
+        transform: scale(#{math.div($i, 10)+1});
     }
 }
