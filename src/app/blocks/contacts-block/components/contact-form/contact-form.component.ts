@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,21 +11,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactFormComponent implements OnInit {
 
-  contactForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) { }
+  contactForm: FormGroup = new FormGroup({});
 
   ngOnInit(): void {
-    this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.email, Validators.required]],
-      message: ['', Validators.required]
-    });
+    void this.contactForm.addControl('name', new FormControl('', Validators.required));
+    void this.contactForm.addControl('email', new FormControl('', [Validators.email, Validators.required]));
+    void this.contactForm.addControl('message', new FormControl('', Validators.required));
   }
 
   sendMessage(): void {
     if (this.contactForm && this.contactForm.valid) {
-      const values = this.contactForm.value;
+      const values = this.contactForm.value as unknown;
       console.log(values);
     }
   }

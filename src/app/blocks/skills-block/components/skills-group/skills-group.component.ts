@@ -10,6 +10,4 @@ export class SkillsGroupComponent {
 
   @Input() skillGroup: SkillGroup;
 
-  constructor() { }
-
 }

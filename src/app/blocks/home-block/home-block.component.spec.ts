@@ -6,7 +6,6 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 import { Mock } from 'src/app/testing/mock-data.test';
 import { MockModule } from 'src/app/testing/mock-module.test';
 import { HomeBlockComponent } from './home-block.component';
-import { HomePageData } from './models/home-page.data';
 
 describe('HomeBlockComponent', () => {
   let component: HomeBlockComponent;
@@ -35,7 +34,7 @@ describe('HomeBlockComponent', () => {
     component = fixture.componentInstance;
     firestoreService = TestBed.inject(FirestoreService);
     firestoreSpy = jest.spyOn(firestoreService, 'getCollectionItem')
-                        .mockReturnValue(of(Mock.homeTabData as HomePageData));
+                        .mockReturnValue(of(Mock.homeTabData ));
   });
 
   test('should create', () => {

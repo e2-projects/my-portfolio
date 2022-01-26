@@ -41,7 +41,7 @@ describe('ContactFormComponent', () => {
 
   test('should name be invalid when empty', () => {
     component.ngOnInit();
-    expect(component.contactForm.value.name).toEqual('');
+    expect(component.contactForm.value.name as string).toEqual('');
     expect(component.contactForm.controls.name.errors).toEqual({ required: true });
   });
 
@@ -53,7 +53,7 @@ describe('ContactFormComponent', () => {
 
   test('should email be invalid when empty or wrong format', () => {
     component.ngOnInit();
-    expect(component.contactForm.value.email).toEqual('');
+    expect(component.contactForm.value.email as string).toEqual('');
     expect(component.contactForm.controls.email.errors).toEqual({ required: true });
 
     component.contactForm.controls.email.setValue('notanemail');
@@ -68,7 +68,7 @@ describe('ContactFormComponent', () => {
 
   test('should message be invalid when empty', () => {
     component.ngOnInit();
-    expect(component.contactForm.value.message).toEqual('');
+    expect(component.contactForm.value.message as string).toEqual('');
     expect(component.contactForm.controls.message.errors).toEqual({ required: true });
   });
 

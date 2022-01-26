@@ -1,7 +1,9 @@
 {
   "root": true,
   "ignorePatterns": [
-    "projects/**/*"
+    "projects/**/*",
+    "*unsubscribtion.operator.ts",
+    "*.test.ts"
   ],
   "overrides": [
     {
@@ -17,6 +19,9 @@
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
@@ -35,7 +40,10 @@
             "style": "camelCase",
             "type": "attribute"
           }
-        ]
+        ],
+        "@typescript-eslint/no-unsafe-call": ["off"],
+        "@typescript-eslint/no-unsafe-member-access": ["off"],
+        "@typescript-eslint/unbound-method": ["off"]
       }
     },
     {
