@@ -10,6 +10,4 @@ export class SkillsGroupContentComponent {
 
   @Input() skills: Skill[];
 
-  constructor() { }
-
 }

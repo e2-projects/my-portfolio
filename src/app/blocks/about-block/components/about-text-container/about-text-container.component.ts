@@ -14,6 +14,4 @@ export class AboutTextContainerComponent {
   @Input() animationDelay = 0;
   @Input() data?: AboutDescription;
 
-  constructor() { }
-
 }

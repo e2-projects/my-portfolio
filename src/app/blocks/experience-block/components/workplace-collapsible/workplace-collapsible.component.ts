@@ -14,8 +14,6 @@ export class WorkplaceCollapsibleComponent {
   @Input() workplace: Workplace;
   @Input() animationDelay = 0;
 
-  constructor() { }
-
   toggle(): void {
     this.visible = !this.visible;
   }

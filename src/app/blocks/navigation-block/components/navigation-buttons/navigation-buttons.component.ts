@@ -28,7 +28,7 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
 
   ngOnInit(): void {
     const path = this.router.routerState.snapshot.url;
-    this.router.navigate([`${path}`]);
+    void this.router.navigate([`${path}`])
   }
 
   ngAfterViewChecked(): void {
@@ -45,27 +45,27 @@ export class NavigationButtonsComponent implements OnInit, AfterViewChecked {
   }
 
   toHomePage(): void {
-    this.router.navigate(['/home']);
+    void this.router.navigate(['/home']);
     this.highlightButton(this.homeButton);
   }
 
   toAboutPage(): void {
-    this.router.navigate(['/about']);
+    void this.router.navigate(['/about']);
     this.highlightButton(this.aboutButton);
   }
 
   toSkillsPage(): void {
-    this.router.navigate(['/skills']);
+    void this.router.navigate(['/skills']);
     this.highlightButton(this.skillsButton);
   }
 
   toExperiencePage(): void {
-    this.router.navigate(['/experience']);
+    void this.router.navigate(['/experience']);
     this.highlightButton(this.experienceButton);
   }
 
   toContactsPage(): void {
-    this.router.navigate(['/contacts']);
+    void this.router.navigate(['/contacts']);
     this.highlightButton(this.contactsButton);
   }
 

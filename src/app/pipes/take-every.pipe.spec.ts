@@ -69,7 +69,7 @@ describe('TakeEveryPipe', () => {
   });
 
   TEST_CASES.forEach(testCase => {
-    test(`should transform '${testCase.elements}' arrary`, () => {
+    test(`should transform '${testCase.elements?.toString()}' arrary`, () => {
       expect(pipe.transform(testCase.elements,
                             testCase.selector,
                             testCase.takeFirst))

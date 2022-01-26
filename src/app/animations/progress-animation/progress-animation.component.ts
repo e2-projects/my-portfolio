@@ -10,15 +10,13 @@ export class ProgressAnimationComponent implements OnInit, OnChanges {
   @Input() progress?: string | number;
   progressClass: string;
 
-  constructor() { }
-
   ngOnInit(): void {
     this.changeProgressClass();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes && changes.progress) {
-      this.progress = changes.progress.currentValue;
+      this.progress = changes.progress.currentValue as string | number;
       this.changeProgressClass();
     }
   }

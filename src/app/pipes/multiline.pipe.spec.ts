@@ -22,7 +22,7 @@ describe('MultilinePipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  TEST_CASES.forEach((testCase: {value: any, expected: string}) => {
+  TEST_CASES.forEach((testCase: {value: string | null | undefined, expected: string}) => {
     test(`should transform '${testCase.value}' to '${testCase.expected}'`, () => {
       expect(pipe.transform(testCase.value)).toEqual(testCase.expected);
     });

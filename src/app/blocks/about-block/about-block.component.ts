@@ -10,8 +10,6 @@ export class AboutBlockComponent implements OnInit {
 
   dataList: AboutDescription[] = [];
 
-  constructor() { }
-
   ngOnInit(): void {
 
     this.dataList = [

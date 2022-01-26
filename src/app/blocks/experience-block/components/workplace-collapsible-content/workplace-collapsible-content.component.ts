@@ -14,6 +14,4 @@ export class WorkplaceCollapsibleContentComponent {
 
   @Input() positions: WorkingPosition[];
 
-  constructor() { }
-
 }
