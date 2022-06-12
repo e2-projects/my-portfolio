@@ -27,3 +27,13 @@ a:hover {
     max-width: .25rem;
     max-height: .25rem;
 }
+
+.navigation-buttons {
+    margin-bottom: 3rem;
+    >button.glass {
+        height: 6rem;
+        width: 18rem;
+    }
+}
+
+
