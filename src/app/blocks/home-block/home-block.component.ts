@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { takeUntil } from 'rxjs/operators';
 import { Collection } from 'src/app/constants/collections';
 import { Company } from 'src/app/models/data/company.model';
+import { FileData } from 'src/app/models/data/file-data.model';
 import { Unsubscribable } from 'src/app/operators/unsubscribtion.operator';
+import { FirestorageService } from 'src/app/services/firestorage.service';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { HomePageData } from './models/home-page.data';
 
@@ -20,7 +22,8 @@ export class HomeBlockComponent extends Unsubscribable() implements OnInit {
   description: string;
   loading = true;
 
-  constructor(private firestore: FirestoreService) {
+  constructor(private firestore: FirestoreService,
+              private firestorage: FirestorageService) {
     super();
   }
 
@@ -28,6 +31,17 @@ export class HomeBlockComponent extends Unsubscribable() implements OnInit {
     this.firestore.getCollectionItem<HomePageData>(Collection.HOME_TAB_DATA)
                   .pipe(takeUntil(this.unsubscribe))
                   .subscribe(data => this.setupData(data));
+  }
+
+  downloadCV(): void {
+    this.firestorage.getFileDownloadUrl('/cv').subscribe((fileData: FileData) => {
+      const downloadLink = document.createElement('a');
+      downloadLink.download = fileData.name;
+      downloadLink.href = fileData.downloadUrl;
+      downloadLink.target = '_blank';
+      downloadLink.click();
+      downloadLink.remove();
+    });
   }
 
   private setupData(data: HomePageData): void {
