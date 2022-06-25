@@ -32,7 +32,9 @@
     "ng2-adsense": "^10.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.1",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "ts-node": "^8.3.0",
+    "typescript": "~4.3.5"
   },
   "devDependencies": {
     "@angular-devkit/architect": "0.1202.14",
@@ -66,9 +68,6 @@
     "prettier": "^2.5.1",
     "protractor": "~7.0.0",
     "sass": "^1.32.12",
-    "ts-jest": "^27.1.2",
-    "ts-node": "^8.3.0",
-    "typescript": "~4.3.5",
-    "yargs": "^17.5.1"
+    "ts-jest": "^27.1.2"
   }
 }
