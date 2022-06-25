@@ -14,7 +14,7 @@ import { HomePageData } from './models/home-page.data';
   styleUrls: ['./home-block.component.scss']
 })
 export class HomeBlockComponent extends Unsubscribable() implements OnInit {
-
+//https://github.com/scttcper/ng2-adsense
   title: string;
   name: string;
   info: string;
