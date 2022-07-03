@@ -29,8 +29,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Build app
         run: |
-          sudo npm install -g ts-node
-          sudo npm install -g typescript
+          sudo npm install --location=global ts-node
+          sudo npm install --location=global typescript
           sudo npm install
           npm run config
           npm run build
@@ -43,3 +43,10 @@ jobs:
           FIREBASE_SENDER: ${{ secrets.FIREBASE_SENDER }}
           FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           FIREBASE_MEASUREMENT_ID: ${{ secrets.FIREBASE_MEASUREMENT_ID }}
+      - name: Deploy to Firebase
+        uses: docker://w9jds/firebase-action:master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
